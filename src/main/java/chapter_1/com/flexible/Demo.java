@@ -32,7 +32,9 @@ public class Demo {
                 enjoyMusic();
             }
         };
-        new Thread(runnable).start();
+        Thread thread = new Thread(runnable);
+                thread.start();
+                thread.start();
         browseNews();
     }
 }
