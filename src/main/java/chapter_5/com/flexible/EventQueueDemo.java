@@ -1,8 +1,12 @@
 package chapter_5.com.flexible;
 
+import org.junit.Test;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.LinkedList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.currentThread;
@@ -88,5 +92,24 @@ public class EventQueueDemo {
             }
 
         }, "Consumer").start();
+    }
+
+    @Test
+    public void testMethod(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }).start();
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        Future<?> submit = executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+
+
+            }
+        });
+
     }
 }
